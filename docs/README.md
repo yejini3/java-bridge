@@ -6,7 +6,7 @@
 - 게임이 끝나면 재시도와 종료 중 선택할 수 있다. 
 - 게임 성공 여부와 총 시도한 횟수를 출력하고 종료된다.
 ## 🚀 기능 요구 사항
-- [ ] 다리를 생성한다.
+- [ ] 다리를 생성한다. #BridgeMaker
     - [ ] 위 칸과 아래 칸 중 건널 수 있는 칸이 무엇인지는 '다리 길이 만큼의 무작위 값'을 생성해서 정한다.
     - [ ] 무작위 값이 0인 경우 아래 칸, 1인 경우 위 칸이 건널 수 있는 칸이 된다.
     - [ ] 아래 칸을 건널 수 있는 경우(= 무작위 값이 0인 경우) D값으로 나타낸다.
@@ -17,7 +17,7 @@
     - [ ] 건널 수 없는 칸을 선택한 경우, 다리 건너기 결과를 출력하고 게임을 종료한다. 
     - [ ] 다리를 끝까지 건넜는지 판단한다.
     - [ ] 다리를 끝까지 건너면 게임이 종료된다.
-- [ ] 다리를 건너다 실패하면 게임을 재시작하거나 종료할 수 있다.
+- [ ] 다리를 건너다 실패하면 게임을 재시작하거나 종료할 수 있다. 
     - [ ] 재시작해도 처음에 만든 다리로 재사용한다.
 
 ## 🖨️ 입출력 요구 사항
@@ -118,11 +118,7 @@ Q
 
 - **메서드의 파라미터 개수**는 `최대 3개`까지만 허용한다.
 
-### InputView 클래스
-- 제공된 `InputView` 클래스를 활용해 구현해야 한다.
-- `InputView`의 패키지는 변경할 수 있다.
-- `InputView`의 메서드의 시그니처(인자, 이름)와 반환 타입은 변경할 수 있다.
-- 사용자 값 입력을 위해 필요한 메서드를 추가할 수 있다.
+### ~~InputView 클래스~~
 ```java
 public class InputView {
 
@@ -139,11 +135,8 @@ public class InputView {
     }
 }
 ```
-### OutputView 클래스
-- 제공된 `OutputView` 클래스를 활용해 구현해야 한다.
-- `OutputView`의 패키지는 변경할 수 있다.
-- `OutputView`의 메서드의 이름은 변경할 수 없고, 인자와 반환 타입은 필요에 따라 추가하거나 변경할 수 있다.
-- 값 출력을 위해 필요한 메서드를 추가할 수 있다.
+### ~~OutputView 클래스~~
+- `OutputView`의 메서드의 이름은 변경할 수 없다.
 ```java
 public class OutputView {
 
@@ -156,12 +149,7 @@ public class OutputView {
 ```
 
 ### BridgeGame 클래스
-- 제공된 `BridgeGame` 클래스를 활용해 구현해야 한다.
-- `BridgeGame`에 필드(인스턴스 변수)를 추가할 수 있다.
-- `BridgeGame`의 패키지는 변경할 수 있다.
-- `BridgeGame`의 메서드의 이름은 변경할 수 없고, 인자와 반환 타입은 필요에 따라 추가하거나 변경할 수 있다.
-- 게임 진행을 위해 필요한 메서드를 추가 하거나 변경할 수 있다.
-
+- `BridgeGame`의 메서드의 이름은 변경할 수 없다.
 ```java
 public class BridgeGame {
 
@@ -174,7 +162,6 @@ public class BridgeGame {
 ```
 
 ### BridgeMaker 클래스
-- 제공된 `BridgeMaker` 클래스를 활용해 구현해야 한다.
 - `BridgeMaker`의 필드(인스턴스 변수)를 변경할 수 없다.
 - `BridgeMaker`의 메서드의 시그니처(인자, 이름)와 반환 타입은 변경할 수 없다.
 ```java
@@ -186,7 +173,7 @@ public class BridgeMaker {
 }
 ```
 
-### BridgeRandomNumberGenerator 클래스
+### ~~BridgeRandomNumberGenerator 클래스~~
 
 - Random 값 추출은 제공된 `bridge.BridgeRandomNumberGenerator`의 `generate()`를 활용한다.
 - `BridgeRandomNumberGenerator`, `BridgeNumberGenerator` 클래스의 코드는 변경할 수 없다.
