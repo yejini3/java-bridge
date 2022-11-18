@@ -20,7 +20,7 @@ public class BridgeGame {
     final BridgeNumberGenerator bridgeNumberGenerator = new BridgeRandomNumberGenerator();
     final BridgeMaker bridgeMaker = new BridgeMaker(bridgeNumberGenerator);
 
-    public void startGame(){
+    public void startGame() {
         System.out.println(GAME_START_MESSAGE);
         makeBridge();
 
@@ -29,17 +29,24 @@ public class BridgeGame {
 
 
     }
-    public void makeBridge(){
+
+    public void makeBridge() {
         int bridgeSize = InputView.readBridgeSize();
         this.bridge = bridgeMaker.makeBridge(bridgeSize);
     }
-    public List<String> getBridge(){
-        return this.bridge;
+
+    public void startMoving() {
+        currentBridge = new ArrayList<>();
+        while (checkMoving) {
+            currentBridge = move(currentBridge);
+        }
     }
-    public void startMoving(){
-//        while(){
-//            move();
-//        }
+
+    public boolean checkMoving() {
+        if (BridgeMoving.checkBridge(movingDirection)) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -47,12 +54,16 @@ public class BridgeGame {
      * <p>
      * 이동을 위해 필요한 메서드의 반환 타입(return type), 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
-    public void move() {
-//        String movingSelection = InputView.readMoving();
-//        List<String> movingResult = BridgeMoving.moveBridge(movingSelection);
-//        
-//        OutputView.printMap(movingResult);
+    public boolean move(List<String> previousBridge) {
+        String movingDirection = InputView.readMoving();
+        if (BridgeMoving.checkBridge(movingDirection)) {
 
+        }
+
+        this.currentBridge = BridgeMoving.moveBridge(bridge, previousBridge, movingDirection);
+
+        OutputView.printMap(currentBridge);
+        return false;
     }
 
     /**

@@ -5,11 +5,11 @@ import java.util.List;
 public class BridgeMoving {
 
 
-    public List<String> moveBridge(List<String> bridge, String movingSelection){
+    public static List<String> moveBridge(List<String> bridge, List<String> currentBridge, String movingSelection){
 
         return null;
     }
-    public boolean checkBridge(){
+    public static boolean checkBridge(String movingDirection){
 
         return true;
     }
