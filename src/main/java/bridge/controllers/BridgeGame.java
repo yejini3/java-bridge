@@ -15,19 +15,26 @@ import java.util.List;
  */
 public class BridgeGame {
     private static final String GAME_START_MESSAGE = "다리 건너기 게임을 시작합니다.";
-    private final List<String> bridge;
-    private List<String> currentBridge = new ArrayList<>();
+    private List<String> bridge;
+    private List<String> currentBridge;
     final BridgeNumberGenerator bridgeNumberGenerator = new BridgeRandomNumberGenerator();
     final BridgeMaker bridgeMaker = new BridgeMaker(bridgeNumberGenerator);
 
-    public BridgeGame() {
-        System.out.println(GAME_START_MESSAGE);
-        int bridgeSize = InputView.readBridgeSize();
-        bridge = bridgeMaker.makeBridge(bridgeSize);
-    }
     public void startGame(){
+        System.out.println(GAME_START_MESSAGE);
+        makeBridge();
+
         startMoving();
         retry();
+
+
+    }
+    public void makeBridge(){
+        int bridgeSize = InputView.readBridgeSize();
+        this.bridge = bridgeMaker.makeBridge(bridgeSize);
+    }
+    public List<String> getBridge(){
+        return this.bridge;
     }
     public void startMoving(){
 //        while(){
