@@ -15,13 +15,13 @@ import java.util.List;
  */
 public class BridgeGame {
     private static final String GAME_START_MESSAGE = "다리 건너기 게임을 시작합니다.";
-    private static final List<String> BRIDGE = new ArrayList<>();
+    private static List<String> bridge = new ArrayList<>();
     final BridgeNumberGenerator bridgeNumberGenerator = new BridgeRandomNumberGenerator();
     final BridgeMaker bridgeMaker = new BridgeMaker(bridgeNumberGenerator);
     public void startGame(){
         System.out.println(GAME_START_MESSAGE);
         int bridgeSize = InputView.readBridgeSize();
-        bridgeMaker.makeBridge(bridgeSize);
+        bridge = bridgeMaker.makeBridge(bridgeSize);
 
         startMoving();
         retry();
