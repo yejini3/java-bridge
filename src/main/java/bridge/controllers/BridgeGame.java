@@ -15,17 +15,19 @@ import java.util.List;
  */
 public class BridgeGame {
     private static final String GAME_START_MESSAGE = "다리 건너기 게임을 시작합니다.";
-    private static List<String> bridge = new ArrayList<>();
+    private final List<String> bridge;
+    private List<String> currentBridge = new ArrayList<>();
     final BridgeNumberGenerator bridgeNumberGenerator = new BridgeRandomNumberGenerator();
     final BridgeMaker bridgeMaker = new BridgeMaker(bridgeNumberGenerator);
-    public void startGame(){
+
+    public BridgeGame() {
         System.out.println(GAME_START_MESSAGE);
         int bridgeSize = InputView.readBridgeSize();
         bridge = bridgeMaker.makeBridge(bridgeSize);
-
+    }
+    public void startGame(){
         startMoving();
         retry();
-
     }
     public void startMoving(){
 //        while(){
@@ -39,8 +41,9 @@ public class BridgeGame {
      * 이동을 위해 필요한 메서드의 반환 타입(return type), 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
     public void move() {
-//        InputView.readMoving();
-//        List<String> movingResult = BridgeMoving.moveBridge();
+//        String movingSelection = InputView.readMoving();
+//        List<String> movingResult = BridgeMoving.moveBridge(movingSelection);
+//        
 //        OutputView.printMap(movingResult);
 
     }
