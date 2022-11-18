@@ -1,10 +1,12 @@
 package bridge.models;
 
+import java.util.List;
+
 public class BridgeMoving {
 
 
-    public void moveBridge(){
-
+    public List<String> moveBridge(){
+        return null;
     }
     public boolean checkBridge(){
 
