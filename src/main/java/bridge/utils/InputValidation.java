@@ -23,7 +23,7 @@ public class InputValidation {
     }
 
     public void checkMoving(String moving) {
-        if (!moving.matches(INPUT_UP) || !moving.matches(INPUT_DOWN)) {
+        if (!moving.matches(UP_MARK) || !moving.matches(DOWN_MARK)) {
             throw new IllegalArgumentException(MOVING_VAlUE_ERROR);
         }
     }
